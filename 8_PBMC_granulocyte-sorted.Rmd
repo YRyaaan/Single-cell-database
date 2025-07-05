@@ -1,0 +1,28 @@
+---
+title: '8'
+author: "10225000479 陈叶冉"
+date: "2025-06-03"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(Seurat)
+```
+
+
+```{r}
+inputdata.10x <- Read10X_h5("D:/GRADE3/RESEARCH_singlecell/data整合/data/8_PBMC_granulocyte-sorted/pbmc_granulocyte_sorted_10k_raw_feature_bc_matrix.h5")
+
+#scRNA-seq表达情况矩阵
+scRNA_matrix = inputdata.10x$`Gene Expression`
+#scRNA-seq dim的行列名
+scRNA_dim = inputdata.10x$`Gene Expression`@Dimnames
+
+#scATAC-seq peaks表达情况矩阵
+scATAC_matrix = inputdata.10x$Peaks
+scATAC_dim = inputdata.10x$Peaks@Dimnames
+```
