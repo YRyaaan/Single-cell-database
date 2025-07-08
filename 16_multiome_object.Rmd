@@ -1,0 +1,27 @@
+---
+title: "16_multiome_object"
+author: "10225000461张祐诗"
+date: "`r Sys.Date()`"
+output: html_document
+---
+```{r}
+$0408 MAPbrain a multi-omics atlas of the primate brain$
+```{r}
+setwd("D:/HuaweiMoveData/Users/张祐诗zys/Desktop/科研整理")
+file_path <- "D:/HuaweiMoveData/Users/张祐诗zys/Desktop/zy科研/16_multiome_object/multiome_object.RDS"
+data1 <- readRDS(file_path)
+str(data1)
+```
+
+```{r}
+scRNA_matrix1 = data1$RNA@counts
+print(scRNA_matrix1)
+scRNA_row1 = data1$RNA@counts@Dimnames
+print(scRNA_row1)
+scATAC_matrix1 = data1$MACS@counts
+print(scATAC_matrix1)
+scATAC_row1 = data1$MACS@counts@Dimnames
+print(scATAC_row1)
+```
+```
+
