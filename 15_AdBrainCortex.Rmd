@@ -1,0 +1,22 @@
+---
+title: "15_AdBrainCortex"
+author: "10225000461张祐诗"
+date: "`r Sys.Date()`"
+output: html_document
+---
+$GSE126074_AdBrainCortex.rds$
+```{r}
+data5 <- readRDS("D:/HuaweiMoveData/Users/张祐诗zys/Desktop/zy科研/15_AdBrainCortex/GSE126074_AdBrainCortex.rds")
+str(data5)
+```
+
+```{r}
+scRNA_matrix5 = data5$RNA@data
+print(scRNA_matrix5)
+scRNA_row5 = data5$RNA@data@Dimnames
+print(scRNA_row5)
+scATAC_matrix5 = data5$ACTIVITY@data
+print(scATAC_matrix5)
+scATAC_row5 = data5$ACTIVITY@data@Dimnames
+print(scATAC_row5)
+```
