@@ -1,0 +1,19 @@
+---
+title: "14_mouse_gdT_10x_MPI"
+author: "10225000461张祐诗"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+$mouse_gdT_10x_MPI.rds$
+```{r}
+data4 <- readRDS("D:/HuaweiMoveData/Users/张祐诗zys/Desktop/zy科研/14_mouse_gdT_10x_MPI/mouse_gdT_10x_MPI.rds")
+str(data4)
+```
+
+```{r}
+scRNA_matrix4 = data4$RNA@data
+print(scRNA_matrix4)
+scRNA_row4 = data4$RNA@data@Dimnames
+print(scRNA_row4)
+```
