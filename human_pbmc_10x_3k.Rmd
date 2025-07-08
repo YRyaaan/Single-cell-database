@@ -1,0 +1,23 @@
+---
+title: "human_pbmc_10x_3k"
+author: "10225000461张祐诗"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+$0325-2/human_pbmc_10x_3k.rds$
+```{r}
+data3 <- readRDS("D:/HuaweiMoveData/Users/张祐诗zys/Desktop/zy科研/13_human_pbmc_10x/human_pbmc_10x_3k.rds")
+str(data3)
+```
+
+```{r}
+scRNA_matrix3 = data3$RNA@data
+print(scRNA_matrix3)
+scRNA_row3 = data3$RNA@data@Dimnames
+print(scRNA_row3)
+scATAC_matrix3 = data3$ACTIVITY@data
+print(scATAC_matrix3)
+scATAC_row3 = data3$ACTIVITY@data@Dimnames
+print(scATAC_row3)
+```
