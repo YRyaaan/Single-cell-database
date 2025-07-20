@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>单细胞数据文件下载</title>
+    <!-- 引入外部资源 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <!-- 配置Tailwind主题 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#64748b',
+                        snare: '#10b981',
+                        tenx: '#f59e0b',
+                        other: '#8b5cf6',
+                        bgGradientStart: '#f8fafc',
+                        bgGradientEnd: '#e2e8f0',
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'card': '0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.03)',
+                        'card-hover': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- 自定义工具类 -->
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .card-shadow {
+                @apply shadow-card hover:shadow-card-hover transition-all duration-300;
+            }
+            .file-link {
+                @apply flex items-center gap-3 p-3 rounded-lg transition-all duration-300 
+                       hover:bg-primary/5 hover:translate-x-1 cursor-pointer;
+            }
+            .image-container {
+                @apply relative overflow-hidden rounded-lg mb-4 transition-transform duration-300 hover:scale-[1.02];
+            }
+        }
+    </style>
+</head>
+<body class="font-inter text-gray-800 min-h-screen bg-gradient-to-br from-bgGradientStart to-bgGradientEnd">
+    <!-- 页面容器 -->
+    <div class="container mx-auto px-4 py-10 max-w-4xl">
+        <!-- 页面标题 -->
+        <header class="text-center mb-12">
+            <h1 class="text-[clamp(1.8rem,5vw,2.5rem)] font-bold text-gray-800 mb-3">
+                <i class="fa fa-database text-primary mr-2"></i>单细胞数据文件下载
+            </h1>
+            <p class="text-gray-500 max-w-2xl mx-auto">
+                以下为整理后的单细胞测序相关数据文件，按类型分类展示，点击查看详情
+            </p>
+        </header>
+
+        <!-- 10x相关数据 -->
+        <section class="mb-10">
+            <div class="bg-white rounded-xl p-6 card-shadow border border-gray-100">
+                <div class="image-container">
+                    <img src="https://bpic.588ku.com/back_list_pic/23/04/26/d0895c98947a130a52cb2fa446ab9283.jpg!/fh/300/quality/90/unsharp/true/compress/true" 
+                         alt="10x Genomics单细胞测序技术示意图" 
+                         class="w-full h-48 object-cover rounded-lg">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-lg flex items-end">
+                        <h2 class="text-xl font-bold text-white p-4">10x系列数据</h2>
+                    </div>
+                </div>
+                
+                <ul class="space-y-2">
+                    <li>
+                        <!-- 改为跳转至详情页，而非直接下载 -->
+                        <a href="detail_1.html" class="file-link">
+                            <i class="fa fa-info-circle text-tenx text-lg w-5 text-center"></i>
+                            <div>
+                                <div class="font-medium">1. 10xPBMC_paired_full_features.h5ad</div>
+                                <div class="text-sm text-gray-500">10x平台PBMC样本的配对全特征数据</div>
+                            </div>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="detail_3.html" class="file-link">
+                            <i class="fa fa-info-circle text-tenx text-lg w-5 text-center"></i>
+                            <div>
+                                <div class="font-medium">3. 10xNeuron_paired_full_features.h5ad</div>
+                                <div class="text-sm text-gray-500">10x平台神经元样本的配对全特征数据</div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SNAREseq相关数据 -->
+        <section class="mb-10">
+            <div class="bg-white rounded-xl p-6 card-shadow border border-gray-100">
+                <div class="image-container">
+                    <img src="https://pic.rmb.bdstatic.com/bjh/news/679c6c0d4acdac00f7c5b57923c4ede0.png" 
+                         alt="SNAREseq单细胞多组学测序技术示意图" 
+                         class="w-full h-48 object-cover rounded-lg">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-lg flex items-end">
+                        <h2 class="text-xl font-bold text-white p-4">SNAREseq系列数据</h2>
+                    </div>
+                </div>
+                
+                <ul class="space-y-2">
+                    <li>
+                        <a href="detail_4.html" class="file-link">
+                            <i class="fa fa-info-circle text-snare text-lg w-5 text-center"></i>
+                            <div>
+                                <div class="font-medium">4. SNAREseq_paired_full_features.h5ad</div>
+                                <div class="text-sm text-gray-500">SNAREseq技术的配对全特征基础数据</div>
+                            </div>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="detail_5.html" class="file-link">
+                            <i class="fa fa-info-circle text-snare text-lg w-5 text-center"></i>
+                            <div>
+                                <div class="font-medium">5. SNAREseq_human_paired_full_features.h5ad</div>
+                                <div class="text-sm text-gray-500">人类样本的SNAREseq配对全特征数据</div>
+                            </div>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="detail_6.html" class="file-link">
+                            <i class="fa fa-info-circle text-snare text-lg w-5 text-center"></i>
+                            <div>
+                                <div class="font-medium">6. SNAREseq_marmoset_paired_full_features.h5ad</div>
+                                <div class="text-sm text-gray-500">marmoset（狨猴）样本的SNAREseq数据</div>
+                            </div>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="detail_7.html" class="file-link">
+                            <i class="fa fa-info-circle text-snare text-lg w-5 text-center"></i>
+                            <div>
+                                <div class="font-medium">7. SNAREseq_mouse_paired_full_features.h5ad</div>
+                                <div class="text-sm text-gray-500">小鼠样本的SNAREseq配对全特征数据</div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 其他类型数据 -->
+        <section class="mb-10">
+            <div class="bg-white rounded-xl p-6 card-shadow border border-gray-100">
+                <div class="image-container">
+                    <img src="https://ntemimg.wezhan.cn/contents/sitefiles2001/10007283/images/-33998.jpg" 
+                         alt="单细胞测序数据分析示意图" 
+                         class="w-full h-48 object-cover rounded-lg">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-lg flex items-end">
+                        <h2 class="text-xl font-bold text-white p-4">其他类型数据</h2>
+                    </div>
+                </div>
+                
+                <ul class="space-y-2">
+                    <li>
+                        <a href="detail_2.html" class="file-link">
+                            <i class="fa fa-info-circle text-other text-lg w-5 text-center"></i>
+                            <div>
+                                <div class="font-medium">2. sciCAR_paired_full_features.h5ad</div>
+                                <div class="text-sm text-gray-500">sciCAR技术的单细胞多组学配对数据</div>
+                            </div>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="detail_8.html" class="file-link">
+                            <i class="fa fa-info-circle text-other text-lg w-5 text-center"></i>
+                            <div>
+                                <div class="font-medium">8. pbmc_granulocyte_sorted_10k_raw_feature_bc_matrix.h5</div>
+                                <div class="text-sm text-gray-500">PBMC粒细胞分选后的10k原始特征矩阵数据</div>
+                            </div>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="detail_10.html" class="file-link">
+                            <i class="fa fa-info-circle text-other text-lg w-5 text-center"></i>
+                            <div>
+                                <div class="font-medium">10. human_brain.h5mu</div>
+                                <div class="text-sm text-gray-500">人类大脑组织的单细胞多模态数据（h5mu格式）</div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
